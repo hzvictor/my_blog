@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>侯震的博客</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a class="title" href="/"> 我的个人博客 | 技术博客</a>
+            <ul class="menu">
+                <li><a href="/">首页</a></li>
+                <li><a href="/sitemap.html">地图</a></li>
+                <li><a href="/about.html">关于</a></li>
+                <li><a href="/getbook.html">留言</a></li>
+            </ul>
+            <div class="search_bar">
+                <input type="text" placeholder="输入关键词查找">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content_left">
+            <div class="every_day" id="every_day">
+                <span>每日一句</span>
+                <p v-html="getContent">fhsdjfhalasfjlsdfalfdsf</p>
+                
+            </div>
+            <div class="article_list" id="article_list">
+                <div class="article" v-for="item in article">
+                    <a :href="item.link" class="article_title">{{item.title}}</a>
+                    <p class="article_content">{{item.content}}</p>
+                    <div class="article_foot">发布于{{item.data}} | 浏览({{item.views}}) | Tags：{{item.tags}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="right_moudle" id="random_tag">
+                <div>随机标签云</div>
+                <a href="/" v-for="tag in tags" v-bind:style="{ color: randomColor(), fontSize: randomSize() }">{{tag}}</a>
+            </div>
+            <div class="right_moudle" id="new_host">
+                <div>最近热门</div>
+                <ul v-for="host in host">
+                    <li><a :href="host.link">{{host.title}}</a></li>
+                </ul>
+
+            </div>
+            <div class="right_moudle" id="new_comments" >
+                <div>最近评论</div>
+                <ul v-for="comment in newComments">
+                    <li>
+                        <div>
+                            <span>{{comment.name}}</span>
+                            <span class="pull_right">{{comment.data}}</span>
+                        </div>
+                        <p>{{comment.comments}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="right_moudle">
+                    <div>友情链接</div>
+                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
+                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
+                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
+                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
+                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
+
+                </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+            <li>c/c++</li>
+        </ul>
+        <p>Copyright © 2010-2017</p>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/base.js"></script>
+</body>
+
+</html>
