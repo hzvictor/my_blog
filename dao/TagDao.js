@@ -38,5 +38,27 @@ function queryTag(tag,success) {
     connection.end()
 }
 
+function queryALLTag(success) {
+    var querySql = "select * from tags"
+    var params = []
+
+
+    var connection = dbutil.creatConnection()
+    connection.query(querySql, params, function (error, result) {
+        if(error == null){
+            success(result)
+
+        }else{
+            console.log(error)
+        }
+        
+    })
+
+    connection.end()
+}
+
+
+
 module.exports.insertTag = insertTag
 module.exports.queryTag = queryTag
+module.exports.queryALLTag = queryALLTag

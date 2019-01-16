@@ -1,7 +1,7 @@
 var randomTags = new Vue({
     el: "#random_tag",
     data: {
-        tags:['dfd', 'dfdsf', 'grgrgr', 'ffrr','dfd', 'dfdsf', 'grgrgr', 'ffrr','dfd', 'dfdsf', 'grgrgr', 'ffrr']
+        tags:[]
     },
     computed: {
         randomColor:function() {
@@ -18,6 +18,20 @@ var randomTags = new Vue({
                 return size
             }         
         }
+    },
+    created() {
+        axios({
+            method:"get",
+            url:"/queryRandomTag"
+        }).then(res => {
+            
+            var result = []
+            for (let index = 0; index < res.data.data.length; index++) {
+                result.push({text:res.data.data[index].tag, link:"/?tag="+res.data.data[index].tag})
+                
+            }
+            randomTags.tags = result
+        })
     },
 })
 
@@ -64,6 +78,23 @@ var newHost = new Vue({
             return this.hostArticle            
         }
     },
+    created(){
+        axios({
+            method:"get",
+            url:"/queryHotBlog"
+        }).then(res =>{
+            
+            var result = []
+            for (let index = 0; index < res.data.data.length; index++) {
+                var temp = {}
+                temp.title = res.data.data[index].title
+                temp.link = "/blog_detail.html?bid=" + res.data.data[index].id
+                result.push(temp)
+            }
+
+            newHost.hostArticle = result
+        })
+    }
 
 })
 
@@ -85,5 +116,23 @@ var newComments = new Vue({
             return this.new_comments            
         }
     },
+    created(){
+        axios({
+            method:"get",
+            url:"/queryNewComment"
+        }).then(res =>{
+            console
+            var result = []
+            for (let index = 0; index < res.data.data.length; index++) {
+                var temp = {}
+                temp.name = res.data.data[index].user_name
+                temp.data = res.data.data[index].ctime
+                temp.comments = res.data.data[index].comments
+                result.push(temp)
+            }
+
+            newComments.new_comments = result
+        })
+    }
 
 })

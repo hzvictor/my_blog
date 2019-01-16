@@ -1,7 +1,9 @@
 *{
     margin: 0px;
-    padding: 0px
+    padding: 0px;
+    text-decoration: none
 }
+
 
 @font-face{
     font-family: "MyIcon";
