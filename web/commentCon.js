@@ -23,7 +23,7 @@ function queryRandomCode(request, response) {
         width:100,
         height:34,
     })
-    response.writeHead(200,)
+    response.writeHead(200)
     response.write(respUtil.writeResult("success","评论成功", img))
     response.end()
     
@@ -32,7 +32,7 @@ function queryRandomCode(request, response) {
 function queryCommentsByBlogId(request, response){
     var params = url.parse(request.url, true).query
     commentDao.queryCommentsByBlogId(parseInt(params.bid), function (res) {
-        response.writeHead(200,)
+        response.writeHead(200)
         response.write(respUtil.writeResult("success","评论成功", res))
         response.end()
         
@@ -42,7 +42,7 @@ function queryCommentsByBlogId(request, response){
 function queryCommentsCountByBlogId(request, response){
     var params = url.parse(request.url, true).query
     commentDao.queryCommentsCountByBlogId(parseInt(params.bid), function (res) {
-        response.writeHead(200,)
+        response.writeHead(200)
         response.write(respUtil.writeResult("success","评论成功", res))
         response.end()
         
