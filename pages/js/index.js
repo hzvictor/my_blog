@@ -47,8 +47,9 @@ var article_list = new Vue({
                 if(searchUrlParams[i].split("=")[0] == "tag"){
                     try {
                         tag = searchUrlParams[i].split("=")[1]
+                        
                     }catch {
-                        console.log(e)
+                        
                     }
                 }   
                 }   
@@ -56,8 +57,7 @@ var article_list = new Vue({
                     axios({
                         method:"get",
                         url: "/queryBlogByPage?page=" + (page - 1) + "&pageSize=" + pageSize
-                    }).then(function(res){
-                        
+                    }).then(function(res){   
                         var result = res.data.data;
                         var list = []
                         
@@ -109,6 +109,14 @@ var article_list = new Vue({
                     }).catch(function(res){
                         console.log("请求错误")
                     })
+
+                    axios({
+                        method:"get",
+                        url:"/queryBytagsCount?tag=" + tag
+                    }).then(function(res){
+                        article_list.count = res.data.data[0].count
+                        article_list.generatePageTool
+                    })
                     
                     
                 }
@@ -122,13 +130,7 @@ var article_list = new Vue({
                     article_list.generatePageTool
                 })
                 
-                axios({
-                    method:"get",
-                    url:"/queryBytagsCount?tag=" + tag
-                }).then(function(res){
-                    article_list.count = res.data.data[0].count
-                    article_list.generatePageTool
-                })
+                
                 
                 
                 
