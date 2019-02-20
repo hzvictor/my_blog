@@ -52,7 +52,7 @@ function queryCommentsCountByBlogId(request, response){
 function queryNewComment(request, response){
     var params = url.parse(request.url, true).query
     commentDao.queryNewComment(5, function (res) {
-        response.writeHead(200,)
+        response.writeHead(200)
         response.write(respUtil.writeResult("success","评论成功", res))
         response.end()
         
