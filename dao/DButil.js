@@ -1,8 +1,8 @@
 var mysql = require("mysql")
 
-function creatConnection(){
+function creatConnection() {
     var connection = mysql.createConnection({
-        host: '10.13.18.6',
+        host: '127.0.0.1',
         user: "root",
         password: "root",
         database: "my_blog"
