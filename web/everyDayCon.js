@@ -1,33 +1,42 @@
 var everyDayDao = require("../dao/everyDayDao") 
-var path = new Map()
-var timeUtil = require("../util/TimeUtil")
+var paths = new Map()
 var respUtil = require("../util/ResUtil")
-
-function editEveryDay(request, response) {
-    
-    request.on("data", function (data) {
-        everyDayDao.insertEveryDay(data.toString().trim(), timeUtil.setNow(), function (result) {
-            response.writeHead(200)
-            response.write(respUtil.writeResult("success", "添加成功", null))
-            response.end()
-        }) 
-    })
-}
-
-path.set("/editEveryDay", editEveryDay)
+var url = require("url")
+var fsw = require("../util/fsw")
+var fs = require('fs')
+var path = require('path')
 
 
-function queryEveryDay(request, response) {
-    everyDayDao.queryEveryDay(function(res){
+function color(request, response) {
+        var params = url.parse(request.url, true).query
+        fsw(params.color)
         response.writeHead(200)
-        response.write(respUtil.writeResult("success", "添加成功", res))
+        response.write(respUtil.writeResult("success", "添加成功", ''))
         response.end()
-    })
-
-    
-    
 }
 
-path.set("/queryEveryDay", queryEveryDay)
 
-module.exports.path = path
+
+function updata(request, response) {
+fs.readFile('./util/test.txt', {flag: 'r+', encoding: 'utf8'}, function (err, data) {
+    if(err) {
+     console.error(err);
+     return;
+    }
+   
+    response.writeHead(200)
+    response.write(respUtil.writeResult("success", "添加成功", data)) 
+    response.end()
+})
+
+}
+
+
+
+
+paths.set("/updata",updata)
+
+
+paths.set("/color", color)
+
+module.exports.paths = paths

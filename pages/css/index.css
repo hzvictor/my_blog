@@ -1,97 +1,489 @@
-.every_day{
-    background: white;
-    width: 96%;
-    text-align: left;
-    border-radius: 5px;
-    box-shadow: 3px 4px 3px #888888;
-    padding: 10px 15px;
-    
-}
+ * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
 
-.every_day:before{
-    font-family: "MyIcon";
-    content: "\e122";
-    font-size: 12px;
-    color: slateblue;
-    position: relative;
-    display: block;
-    height: 0px;
-    left: 54px
-}
-.every_day > span{
-    display: block;
-    font-size: 12px;
-    margin-bottom: 5px;
-    color: slateblue
-}
+        body {
+            background: #d9beca
+        }
+        button{
+            width:80px;
+            height:31px;
+            background:rgba(211,58,50,1);
+            border-radius:15px;
+            font-size:14px;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(255,255,255,1);
+            line-height:19px;
+            margin-top: 50px;
+            margin-left: 20%
+        }
 
-.article_list{
-    width: 100%;
-    border-radius: 5px;
-    margin-top: 15px;
-}
+        .wrapper {
+            height: 40px;
+            width: 184px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -20px 0 0 -80px;
+        }
 
-.article{
-    background:white;
-    display: inline-block;
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 1px 2px 2px #888888;
-    overflow: hidden;
-    text-align: left;
-    margin-top: 15px;
+        .text {
+            margin-top: 10px;
+        }
 
-}
+        .wrapper>ul {
+            height: inherit;
+            width: 100%;
+            display: block;
+        }
 
-.article_title{
-    display: inline-block;
-    font-size: 20px;
-    text-decoration: none;
-    color: #13102b;
-    padding: 20px 10px 5px 10px;
-    text-align: left;
-}
-.article_title:hover{
-    color: #337ab7
-}
+        .container {
+            width: 46px;
+            height: inherit;
+            float: left;
+        }
 
-.article_content{
-    font-size: 14px;
-    color: #13102b;
-    padding: 0px 10px 20px 10px;
-    text-align: left;
-    word-wrap: break-word;
-    word-break: break-all;
-    overflow: hidden
-}
+        .sphere {
+            position: relative;
+            height: 40px;
+            width: 40px;
+            border: 6px solid #222;
+            border-radius: 50%;
+            background: #222;
+            margin-left: 3px;
+            top: 0;
+        }
 
-.article_foot{
-    color: #eeeeee;
-    background: #1f1f1f;
-    width: 100%;
-    padding: 5px 15px;
-    font-size: 14px
-}
+        .container:nth-of-type(1) .sphere {
+            -webkit-animation: bounce 2s infinite ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: bounce 2s infinite ease-in-out;
+            /* Fx 5+ */
+            -o-animation: bounce 2s infinite ease-in-out;
+            /* Opera 12+ */
+            animation: bounce 2s infinite ease-in-out;
+            /* IE 10+ */
+        }
 
-.page_tool{
-    margin-top: 20px;
-    display: inline-block;
-}
+        .container:nth-of-type(2) .sphere {
+            -webkit-animation: bounce 2s infinite .2s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: bounce 2s infinite .2s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: bounce 2s infinite .2s ease-in-out;
+            /* Opera 12+ */
+            animation: bounce 2s infinite .2s ease-in-out;
+            /* IE 10+ */
+        }
 
-.page_tool > ul > li{
-    display: inline-block;
-    list-style: none;
-    width: 40px;
-    height: 30px;
-    background: white;
-    line-height: 30px;
-    border: 1px solid black;
-    cursor: pointer;
-}
-.page_tool > ul > li:hover{
-    background: #888888
-}
-.now_page{
-    background: #333 !important;
-    color: #fff
-}
+        .container:nth-of-type(3) .sphere {
+            -webkit-animation: bounce 2s infinite .4s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: bounce 2s infinite .4s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: bounce 2s infinite .4s ease-in-out;
+            /* Opera 12+ */
+            animation: bounce 2s infinite .4s ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(4) .sphere {
+            -webkit-animation: bounce 2s infinite .6s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: bounce 2s infinite .6s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: bounce 2s infinite .6s ease-in-out;
+            /* Opera 12+ */
+            animation: bounce 2s infinite .6s ease-in-out;
+            /* IE 10+ */
+        }
+
+        /* Green */
+        @-webkit-keyframes bounce {
+            0% {
+                top: 0;
+            }
+
+            25% {
+                top: -180px;
+            }
+
+            50% {
+                top: 0;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        @-moz-keyframes bounce {
+            0% {
+                top: 0;
+            }
+
+            25% {
+                top: -180px;
+            }
+
+            50% {
+                top: 0;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        @-o-keyframes bounce {
+            0% {
+                top: 0;
+            }
+
+            25% {
+                top: -180px;
+            }
+
+            50% {
+                top: 0;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                top: 0;
+            }
+
+            25% {
+                top: -180px;
+            }
+
+            50% {
+                top: 0;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        span.shadow {
+            height: 10px;
+            width: 40px;
+            display: block;
+            background: rgba(0, 0, 0, 0.45);
+            margin-left: -20px;
+            border-radius: 50%;
+            position: relative;
+            left: 50%;
+        }
+
+        @-webkit-keyframes depth {
+            0% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            25% {
+                height: 4px;
+                width: 20px;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            50% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            100% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+        }
+
+        @-moz-keyframes depth {
+            0% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            25% {
+                height: 4px;
+                width: 20px;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            50% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            100% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+        }
+
+        @-o-keyframes depth {
+            0% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            25% {
+                height: 4px;
+                width: 20px;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            50% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            100% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+        }
+
+        @keyframes depth {
+            0% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            25% {
+                height: 4px;
+                width: 20px;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            50% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            100% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+        }
+
+
+        .container:nth-of-type(1) .shadow {
+            -webkit-animation: depth 2s infinite ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: depth 2s infinite ease-in-out;
+            /* Fx 5+ */
+            -o-animation: depth 2s infinite ease-in-out;
+            /* Opera 12+ */
+            animation: depth 2s infinite ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(2) .shadow {
+            -webkit-animation: depth 2s infinite .2s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: depth 2s infinite .2s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: depth 2s infinite .2s ease-in-out;
+            /* Opera 12+ */
+            animation: depth 2s infinite .2s ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(3) .shadow {
+            -webkit-animation: depth 2s infinite .4s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: depth 2s infinite .4s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: depth 2s infinite .4s ease-in-out;
+            /* Opera 12+ */
+            animation: depth 2s infinite .4s ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(4) .shadow {
+            -webkit-animation: depth 2s infinite .6s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: depth 2s infinite .6s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: depth 2s infinite .6s ease-in-out;
+            /* Opera 12+ */
+            animation: depth 2s infinite .6s ease-in-out;
+            /* IE 10+ */
+        }
+
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+
+        #app div:first-child {
+            font-size: 19px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 1);
+            line-height: 10vw;
+            text-align: center;
+        }
+
+        .wrappers {
+            display: flex;
+            flex-direction: column;
+            margin-top: -34px;
+        }
+
+        .wrappers>div {
+            width: 100%;
+            height: 160px;
+            flex-shrink: 1;
+        }
+
+        .hh {
+            -webkit-perspective-origin: 50% 100px;
+            -moz-perspective-origin: 50% 100px;
+            -webkit-perspective: 400;
+            -moz-perspective: 400;
+        }
+
+        .div1 {
+            margin: 100px auto 0;
+            width: 100px;
+            height: 100px;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -webkit-transition: -webkit-transform 2s linear;
+            -moz-transition: -moz-transform 2s linear;
+            -webkit-transform: rotateX(0) rotateY(0);
+            -moz-transform: rotateX(0) rotateY(0);
+            position: relative;
+            -webkit-animation: animations 5s linear infinite;
+            -moz-animation: animations 5s linear infinite;
+        }
+
+        .div1:hover {
+            -webkit-transform: rotateX(90deg) rotateY(90deg);
+            -moz-transform: rotateX(90deg) rotateY(90deg);
+        }
+
+        .div1 div {
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            transition: background 1s;
+        }
+
+        .div2 {
+            -moz-transform: rotateY(0) translateZ(50px);
+            -webkit-transform: rotateY(0) translateZ(50px);
+        }
+
+        .div3 {
+            -moz-transform: rotateY(90deg) translateZ(50px);
+            -webkit-transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .div4 {
+            -moz-transform: rotateY(-90deg) translateZ(50px);
+            -webkit-transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .div5 {
+            -moz-transform: rotateY(180deg) translateZ(50px);
+            -webkit-transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .div6 {
+            -moz-transform: rotateX(-90deg) translateZ(50px);
+            -webkit-transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        .div7 {
+            -moz-transform: rotateX(90deg) translateZ(50px);
+            -webkit-transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .color1 {
+            background: rgb(208, 16, 76) !important;
+            
+        }
+
+        .color3 {
+            background: rgb(88, 178, 220) !important
+        }
+
+        .color2 {
+            background: rgb(0, 137, 108) !important
+        }
+        .color4 {
+            background: #222 !important
+        }
+
+        @-webkit-keyframes animations {
+            0% {
+                -webkit-transform: rotateX(0) rotateY(0);
+            }
+
+            25% {
+                -webkit-transform: rotateX(90deg) rotateY(90deg);
+            }
+
+            50% {
+                -webkit-transform: rotateX(180deg) rotateY(180deg);
+            }
+
+            75% {
+                -webkit-transform: rotateX(270deg) rotateY(270deg);
+            }
+
+            100% {
+                -webkit-transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        @-moz-keyframes animations {
+            0% {
+                -moz-transform: rotateX(0) rotateY(0);
+            }
+
+            25% {
+                -moz-transform: rotateX(90deg) rotateY(90deg);
+            }
+
+            50% {
+                -moz-transform: rotateX(180deg) rotateY(180deg);
+            }
+
+            75% {
+                -moz-transform: rotateX(270deg) rotateY(270deg);
+            }
+
+            100% {
+                -moz-transform: rotateX(360deg) rotateY(360deg);
+            }
+        }

@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+input{
+    margin: 50px;
+    width: 180px;
+    height: 20px;
+    border: 1px solid black
+}
+button{
+     border: 1px solid black;
+     width: 80px;
+    height: 20px;
+}

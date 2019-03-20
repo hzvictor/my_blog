@@ -5,105 +5,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>侯震的博客</title>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
 
+    </style>
 </head>
 
+
 <body>
-    <header class="header">
-        <div class="container">
-            <a class="title" href="/"> 我的个人博客 | 技术博客</a>
-            <ul class="menu">
-                <li><a href="/">首页</a></li>
-                <li><a href="/sitemap.html">地图</a></li>
-                <li><a href="/about.html">关于</a></li>
-                <li><a href="/getbook.html">留言</a></li>
+    <div id="app">
+        <div class="text">{{message}}</div>
+        <div class="wrapper" v-if="state">
+            <ul>
+                <li class="container">
+                    <section class="sphere"></section>
+                    <span class="shadow"></span>
+                </li>
+                <li class="container">
+                    <section class="sphere"></section>
+                    <span class="shadow"></span>
+                </li>
+                <li class="container">
+                    <section class="sphere"></section>
+                    <span class="shadow"></span>
+                </li>
+                <li class="container">
+                    <section class="sphere"></section>
+                    <span class="shadow"></span>
+                </li>
             </ul>
-            <div class="search_bar">
-                <input type="text" placeholder="输入关键词查找">
-                <button>搜索</button>
-            </div>
+            <button @click="starts">开始</button>
         </div>
-    </header>
-    <div class="content">
-        <div class="content_left">
-            <div class="every_day" id="every_day">
-                <span>每日一句</span>
-                <p v-html="getContent">fhsdjfhalasfjlsdfalfdsf</p>
-                
-            </div>
-            <div class="article_list" id="article_list">
-                <div class="article" v-for="item in article">
-                    <a :href="item.link" class="article_title">{{item.title}}</a>
-                    <p class="article_content">{{item.content}}</p>
-                    <div class="article_foot">发布于{{item.data}} | 浏览({{item.views}}) | Tags：{{item.tags}}</div>
-                </div>
-                <div class="page_tool">
-                    <ul>
-                        <li v-for="pageNum in pageNumList" @click="jumpTo(pageNum.page)" :class="{now_page:(pageNum.text == page)}">{{pageNum.text}}</li>
-                    </ul>
-                </div>
-            </div>
-           
-        </div>
-        <div class="content_right">
-            <div class="right_moudle" id="random_tag">
-                <div>随机标签云</div>
-                <a :href="tag.link" v-for="tag in tags" v-bind:style="{ color: randomColor(), fontSize: randomSize() }">{{tag.text}}</a>
-            </div>
-            <div class="right_moudle" id="new_host">
-                <div>最近热门</div>
-                <ul v-for="host in host">
-                    <li><a :href="host.link">{{host.title}}</a></li>
-                </ul>
-
-            </div>
-            <div class="right_moudle" id="new_comments" >
-                <div>最近评论</div>
-                <ul v-for="comment in newComments">
-                    <li>
-                        <div>
-                            <span>{{comment.name}}</span>
-                            <span class="pull_right">{{comment.data}}</span>
+        <div class="wrappers" v-if="!state">
+                <div class="frist">
+                    <div class="hh">
+                        <div class="div1">
+                            <div :class="[{div2:true} ,frist]"></div>
+                            <div :class="[{div3:true} ,frist]"></div>
+                            <div :class="[{div4:true} ,frist]"></div>
+                            <div :class="[{div5:true} ,frist]"></div>
+                            <div :class="[{div6:true} ,frist]"></div>
+                            <div :class="[{div7:true} ,frist]"></div>
                         </div>
-                        <p>{{comment.comments}}</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="right_moudle">
-                    <div>友情链接</div>
-                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
-                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
-                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
-                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
-                    <span><a href="/">挨踢茶馆</a></span> <span><a href="/">挨踢茶馆</a></span>
-
+                    </div>
                 </div>
-
+                <div>
+                    <div class="second">
+                        <div class="hh">
+                            <div class="div1">
+                                <div :class="[{div2:true} ,second]"></div>
+                                <div :class="[{div3:true} ,second]"></div>
+                                <div :class="[{div4:true} ,second]"></div>
+                                <div :class="[{div5:true} ,second]"></div>
+                                <div :class="[{div6:true} ,second]"></div>
+                                <div :class="[{div7:true} ,second]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="thd">
+                        <div class="hh">
+                            <div class="div1">
+                                <div :class="[{div2:true} ,throd]"></div>
+                                <div :class="[{div3:true} ,throd]"></div>
+                                <div :class="[{div4:true} ,throd]"></div>
+                                <div :class="[{div5:true} ,throd]"></div>
+                                <div :class="[{div6:true} ,throd]"></div>
+                                <div :class="[{div7:true} ,throd]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-    <div class="footer">
-        <ul>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-            <li>c/c++</li>
-        </ul>
-        <p>Copyright © 2010-2017</p>
-    </div>
-    <script src="js/index.js"></script>
-    <script src="js/base.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                state: true,
+                message: '任务队列',
+                frist: 'color1',
+                second: 'color2',
+                throd: 'color3'
+            },
+            mounted() {
+                var start = setInterval(() => {
+                    var colorNum = parseInt(Math.random() * 3 + 1, 10)
+                    this.frist = `color${colorNum}`
+                    this.second= `color${colorNum}`
+                    this.throd = `color${colorNum}`
+
+                }, 1000)
+                setInterval(()=>{
+                    this.postText(start)
+                },50)
+                    
+
+
+            },
+
+            methods: {
+                postText:  (a) => {
+                    clearInterval(a)
+                    axios.get('/updata', {
+                        })
+                        .then(function (response) {
+                           let colorNums = [...response.data.data]
+                          if(response.data.data == "") {return}
+                          else{
+                            app.frist = `color${colorNums[0]}`
+                           app.second = `color${colorNums[1]}`
+                           app.throd = `color${colorNums[2]}`
+                          }   
+                        })
+                },
+                starts: function(){
+                    this.state = false
+                },
+            }
+
+
+        })
+    </script>
 </body>
 
 </html>
