@@ -7123,12 +7123,16 @@
 
     el.onclick = function () {
       console.log("1111111111111")
-      zhifubao()
+      zhifubao().bind(this)
     }
 
     var _0 = "https://qr.alipay.com/c1x024493xj5c3xehuyk434";
 
     var _1 = "https://qr.alipay.com/c1x024493xj5c3xehuyk434";
+
+      function is_weixin() {
+            return /MicroMessenger/i.test(navigator.userAgent)
+        }
 
     function is_android() {
       return navigator.userAgent.toLowerCase().match(/(Android|SymbianOS)/i)
